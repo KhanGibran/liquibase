@@ -1,0 +1,42 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+<!--
+1) There are 3 change sets in our 1.0 database schema.
+    a) Creation of 'department' table.
+    b) Creation of 'employee' table.
+    c) A tag for version 1.0 is added in the end.
+2) Every change set has an id and an author.
+3) This xml file demonstrate how to create table and primary key for it.
+4) The result up to version 1.0 is 2 tables in the database.
+-->
+    <changeSet id="create_department" author="mohamg">
+        <createTable tableName="department">
+            <column name="id" type="int">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create_employee" author="mohamg">
+        <createTable tableName="employee">
+            <column name="id" type="int">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="emp_name" type="varchar(50)">
+                <constraints nullable="false" />
+            </column>
+            <column name="dept" type="int"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="mohamg-1.0" author="mohamg">
+        <tagDatabase tag="1.0" />
+    </changeSet>
+
+</databaseChangeLog>
