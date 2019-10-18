@@ -55,4 +55,5 @@ version 1.2, add foreign key and index
         **NOTE: The changeLogFile is a filename to be created.  The file name must end with ".xml", ".json" or ".yaml".**
         
         Maven Command: mvn liquibase:generateChangeLog -Dliquibase.outputChangeLogFile=/output.xml
-                    
+
+5) Reference: http://shengwangi.blogspot.com/2016/04/liquibase-helloworld-example.html                   
