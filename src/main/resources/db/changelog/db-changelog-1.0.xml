@@ -35,6 +35,22 @@
         </createTable>
     </changeSet>
 
+    <changeSet id="mohamg_department_data" author="mohamg" context="faker">
+        <loadData file="db/data/department.csv" tableName="department" separator="|">
+            <column name="id" type="numeric"/>
+            <column name="name" type="string"/>
+        </loadData>
+    </changeSet>
+
+    <changeSet id="mohamg_employee_data" author="mohamg" context="faker">
+        <loadData file="db/data/employee.csv" tableName="employee" separator="|">
+            <column name="id" type="numeric"/>
+            <column name="emp_name" type="string"/>
+            <column name="dept" type="numeric"/>
+        </loadData>
+    </changeSet>
+
+
     <changeSet id="mohamg-1.0" author="mohamg">
         <tagDatabase tag="1.0" />
     </changeSet>
